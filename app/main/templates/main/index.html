@@ -1,0 +1,39 @@
+{% extends 'main/tmp/base.html' %}
+
+{% block title %}
+Party Parrots
+{% endblock %}
+
+
+{% block body %}
+
+<br>
+<br>
+<br>
+<br>
+
+<header class="mb-auto">
+  <p class="lead"></p>
+
+  {% for bird in parrots %}
+
+  <div>
+    <h4>{{ bird.name }}</h4>
+    <p><img src='media/{{ bird.avatar }}' alt='parrot' height="300" width="300"></p>
+    <h>Description: <i>{{ bird.description }}</i></h>
+    <br>
+    <hr />
+  </div>
+  {% endfor %}
+
+      <h2>This is Parrot with glasses.</h2>
+      <p><img src='media/images/party-parrot.gif' alt='parrot' height="300" width="300"></p>
+      <p class="lead">Ooh, I'm good!</p>
+      <p class="lead"></p>
+  </header>
+  <footer class="mt-auto text-white-50">
+      <p>Cover template for DevOps</p>
+  </footer>
+
+{% endblock %}
+

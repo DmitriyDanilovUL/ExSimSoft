@@ -1,0 +1,25 @@
+{% extends 'main/tmp/base.html' %}
+
+{% block title %}
+Create parrots
+{% endblock %}
+
+
+{% block body %}
+
+<br>
+<br>
+<br>
+<br>
+
+    <h2>Create your parrot</h2><br>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.description }}<br>
+        {{ form.avatar }}<br>
+        <button type="submit" class="btn btn-success">Go to party!</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
