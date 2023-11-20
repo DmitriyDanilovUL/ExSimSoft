@@ -19,4 +19,4 @@ RUN pip --no-cache-dir install --upgrade pip==23.1.2 | pip install --no-cache-di
 
 USER worker
 
-CMD ["gunicorn","-b","0.0.0.0:8000","main.wsgi:application"]
+#CMD ["gunicorn","-b","0.0.0.0:8000","main.wsgi:application"]

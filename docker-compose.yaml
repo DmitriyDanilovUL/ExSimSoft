@@ -1,11 +1,11 @@
-version: "2"
+version: "3.5"
 
 services:
   postgres:
     image: postgres:15
     container_name: postgres
     volumes:
-      - ~/.pg/pg_data/base:/var/lib/postgresql/data
+      - base:/var/lib/postgresql/data
     env_file:
       - ./app/.env
     ports:
@@ -23,9 +23,10 @@ services:
     ports:
       - 8000:8000
     command: >
-      bash -c " python manage.py migrate  && gunicorn -b 0.0.0.0:8000 parrotsite.wsgi:application"
+      bash -c " sleep 20 && python manage.py migrate  && sleep 10 && gunicorn -b 0.0.0.0:8000 parrotsite.wsgi:application"
 
 volumes:
+  base:
   base_volume:
   media_volume:
 #  certs:
